@@ -1,0 +1,23 @@
+name: riak
+version: 0.0.1
+inherits: wercker/ubuntu12.04-webessentials@0.0.3
+type: service
+platform: ubuntu@12.04
+description: wercker box for riak, an open source distributed database
+keywords:
+  - riak
+  - erlang
+  - database
+  - nosql
+packages:
+  - riak
+script: |
+  curl http://apt.basho.com/gpg/basho.apt.key | sudo apt-key add -
+  sudo bash -c "echo deb http://apt.basho.com $(lsb_release -sc) main > /etc/apt/sources.list.d/basho.list"
+  sudo apt-get update
+  sudo apt-get install
+env:
+  WERCKER_RIAK_PORT:
+  WERCKER_RIAK_PORT:
+  WERCKER_RIAK_PORT:
+  WERCKER_RIAK_PORT:
