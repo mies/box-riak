@@ -13,8 +13,3 @@ packages:
   - riak
 script: |
   sudo puppet apply --modulepath=$WERCKER_SOURCE_DIR/modules $WERCKER_SOURCE_DIR/manifests/init.pp
-env:
-  WERCKER_RIAK_PORT:
-  WERCKER_RIAK_PORT:
-  WERCKER_RIAK_PORT:
-  WERCKER_RIAK_PORT:
