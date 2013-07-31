@@ -1,9 +1,9 @@
 name: riak
-version: 0.0.1
-inherits: wercker/ubuntu12.04-webessentials@0.0.3
+version: 0.0.2
+inherits: mies/puppet
 type: service
 platform: ubuntu@12.04
-description: wercker box for riak, an open source distributed database
+description: wercker box for riak an open source distributed database
 keywords:
   - riak
   - erlang
@@ -12,10 +12,7 @@ keywords:
 packages:
   - riak
 script: |
-  curl http://apt.basho.com/gpg/basho.apt.key | sudo apt-key add -
-  sudo bash -c "echo deb http://apt.basho.com $(lsb_release -sc) main > /etc/apt/sources.list.d/basho.list"
-  sudo apt-get update
-  sudo apt-get install
+  sudo puppet apply --modulepath=$WERCKER_SOURCE_DIR/modules $WERCKER_SOURCE_DIR/manifests/init.pp
 env:
   WERCKER_RIAK_PORT:
   WERCKER_RIAK_PORT:
