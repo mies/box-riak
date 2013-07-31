@@ -1,6 +1,6 @@
 name: riak
 version: 0.0.2
-inherits: mies/puppet
+inherits: mies/puppet@0.0.6
 type: service
 platform: ubuntu@12.04
 description: wercker box for riak an open source distributed database
